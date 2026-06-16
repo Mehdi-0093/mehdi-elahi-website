@@ -1,43 +1,60 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Stink Studios color tokens */
-  --color-void: #000000;
-  --color-bone: #ffffff;
-  --color-soot: #050505;
-  --color-ember-coral: #e1695e;
-  --color-burnt-sienna: #573332;
+  /* Anthropic accent palette */
+  --color-clay: #d97757;
+  --color-ember: #c6613f;
+  --color-olive: #788c5d;
+  --color-sky: #6a9bcc;
+  --color-fig: #c46686;
+  --color-cactus: #bcd1ca;
+
+  /* Neutrals & surfaces */
+  --color-slate-dark: #141413;
+  --color-slate-medium: #3d3d3a;
+  --color-slate-light: #5e5d59;
+  --color-cloud-dark: #87867f;
+  --color-cloud-medium: #b0aea5;
+  --color-cloud-light: #d1cfc5;
+  --color-ivory-light: #faf9f5;
+  --color-ivory-medium: #f0eee6;
+  --color-ivory-dark: #e8e6dc;
+  --color-oat: #e3dacc;
 
   /* Semantic aliases — kept so existing component classes still resolve */
-  --color-bg: #000000;
-  --color-surface: #050505;
-  --color-surface-2: #141414;
-  --color-ink: #ffffff;
-  --color-muted: #a3a3a3;
-  --color-subtle: #808080;
-  --color-border: #1f1f1f;
-  --color-border-strong: #ffffff;
-  --color-accent: #e1695e;
-  --color-accent-hover: #d65a4f;
-  --color-accent-soft: #573332;
+  --color-bg: #faf9f5;
+  --color-surface: #f0eee6;
+  --color-surface-2: #e3dacc;
+  --color-dark: #141413;
+  --color-ink: #141413;
+  --color-muted: #5e5d59;
+  --color-subtle: #87867f;
+  --color-border: #d1cfc5;
+  --color-border-strong: #141413;
+  --color-accent: #d97757;
+  --color-accent-hover: #c6613f;
+  --color-accent-soft: #e3dacc;
 
-  /* Fonts — Helvetica workhorse, Times New Roman editorial serif, Courier mono labels */
-  --font-sans: Helvetica, "Helvetica Neue", var(--font-inter), Arial, sans-serif;
-  --font-serif: "Times New Roman", Times, Georgia, serif;
-  --font-mono: "Courier New", Courier, var(--font-jetbrains), ui-monospace, monospace;
+  /* Fonts — sans for UI/light headlines, serif for dark display, mono for metadata */
+  --font-sans: var(--font-inter), "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-lora), ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "JetBrains Mono", monospace;
 
-  /* Typography scale — cinematic: compressed display, wide mono captions */
-  --text-caption: 14px;
+  /* Typography scale */
+  --text-caption: 12px;
+  --text-body-sm: 15px;
   --text-body: 16px;
-  --text-subheading: 19px;
-  --text-heading-sm: 23px;
-  --text-heading: 52px;
-  --text-display: 60px;
+  --text-subheading: 18px;
+  --text-heading-sm: 20px;
+  --text-heading: 24px;
+  --text-heading-lg: 61px;
+  --text-display: 91px;
 
-  /* Shape — 0px is the signature; only inputs round */
-  --radius-card: 0px;
-  --radius-pill: 0px;
-  --radius-input: 10px;
+  /* Shape — 0px buttons/badges (signature), 8px cards, 16px panels, 24px feature */
+  --radius-button: 0px;
+  --radius-card: 8px;
+  --radius-panel: 16px;
+  --radius-feature: 24px;
 }
 
 :root {
@@ -56,22 +73,21 @@
   body {
     background-color: var(--color-bg);
     color: var(--color-ink);
-    font-family:
-      Helvetica, "Helvetica Neue", var(--font-sans), Arial, sans-serif;
+    font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
-  /* Helvetica thin carries display weight; Times New Roman is applied
-     selectively via font-serif for sparing editorial moments. */
+  /* Sans carries headlines on light (ivory) surfaces; serif is applied
+     selectively via font-serif inside the dark hero only. */
   h1,
   h2,
   h3,
   h4 {
     font-family: var(--font-sans);
-    font-weight: 300;
-    letter-spacing: -0.03em;
-    color: var(--color-bone);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-slate-dark);
   }
 
   section[id] {
@@ -79,12 +95,12 @@
   }
 
   ::selection {
-    background: var(--color-bone);
-    color: var(--color-void);
+    background: var(--color-clay);
+    color: var(--color-ivory-light);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-bone);
+    outline: 2px solid var(--color-clay);
     outline-offset: 2px;
   }
 }

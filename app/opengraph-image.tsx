@@ -16,10 +16,10 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#000000",
+          background: "#faf9f5",
           padding: "80px",
           fontFamily: "sans-serif",
-          borderTop: "12px solid #e1695e",
+          borderTop: "12px solid #d97757",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
@@ -30,8 +30,8 @@ export default function OpengraphImage() {
               justifyContent: "center",
               width: "64px",
               height: "64px",
-              background: "#e1695e",
-              color: "#ffffff",
+              background: "#d97757",
+              color: "#faf9f5",
               fontSize: "28px",
               fontWeight: 700,
             }}
@@ -41,7 +41,7 @@ export default function OpengraphImage() {
           <div
             style={{
               fontSize: "20px",
-              color: "#808080",
+              color: "#87867f",
               textTransform: "uppercase",
               letterSpacing: "4px",
             }}
@@ -53,19 +53,19 @@ export default function OpengraphImage() {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
-              fontSize: "92px",
-              fontWeight: 400,
-              color: "#ffffff",
-              lineHeight: 0.95,
-              letterSpacing: "-4px",
+              fontSize: "90px",
+              fontWeight: 700,
+              color: "#141413",
+              lineHeight: 1.0,
+              letterSpacing: "-3px",
             }}
           >
             {profile.name}
           </div>
-          <div style={{ fontSize: "32px", color: "#ffffff", marginTop: "22px" }}>
+          <div style={{ fontSize: "32px", color: "#3d3d3a", marginTop: "22px" }}>
             {profile.title}
           </div>
-          <div style={{ fontSize: "24px", color: "#9a9a9a", marginTop: "8px" }}>
+          <div style={{ fontSize: "24px", color: "#87867f", marginTop: "8px" }}>
             {profile.subtitle}
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function OpengraphImage() {
         <div
           style={{
             fontSize: "20px",
-            color: "#808080",
+            color: "#87867f",
             fontFamily: "monospace",
             textTransform: "uppercase",
             letterSpacing: "2px",

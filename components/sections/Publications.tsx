@@ -10,7 +10,9 @@ function renderAuthors(authors: string) {
     <React.Fragment key={i}>
       {part}
       {i < parts.length - 1 ? (
-        <span className="font-medium text-white">{highlightedAuthor}</span>
+        <span className="text-[#141413] underline decoration-2 underline-offset-2">
+          {highlightedAuthor}
+        </span>
       ) : null}
     </React.Fragment>
   ));
@@ -26,28 +28,28 @@ export function Publications() {
       intro="Peer-reviewed work in embedded systems, hardware security, and on-chip networks."
     >
       <Reveal>
-        <ol className="border-t border-white/10">
+        <ol className="border-t border-[#d1cfc5]">
           {publications.map((pub, i) => (
             <li
               key={pub.title}
-              className="grid grid-cols-[2rem_1fr] gap-4 border-b border-white/10 py-6 sm:gap-6"
+              className="grid grid-cols-[2rem_1fr] gap-4 border-b border-[#d1cfc5] py-6 sm:gap-6"
             >
-              <span className="pt-1 font-mono text-[12px] tracking-[0.08em] text-white/35">
+              <span className="pt-1 font-mono text-[12px] tracking-[0.06em] text-[#d97757]">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div>
-                <h3 className="font-sans text-[19px] font-light leading-snug text-white">
+                <h3 className="font-sans text-[18px] font-semibold leading-snug text-[#141413]">
                   {pub.title}
                 </h3>
-                <p className="mt-2 text-[13px] leading-relaxed text-white/60">
+                <p className="mt-2 text-[13px] leading-relaxed text-[#5e5d59]">
                   {renderAuthors(pub.authors)}
                 </p>
-                <p className="mt-1 font-serif text-[14px] italic text-white/45">
+                <p className="mt-1 text-[13px] italic text-[#87867f]">
                   {pub.venue}, {pub.year}
                   {pub.pages ? `, pp. ${pub.pages}` : ""}
                 </p>
-                <div className="mt-3 flex items-center gap-3">
-                  <span className="inline-flex items-center rounded-none border border-white/15 px-3 py-1 font-mono text-[12px] uppercase tracking-[0.08em] text-white/70">
+                <div className="mt-3 flex items-center gap-4">
+                  <span className="font-mono text-[12px] uppercase tracking-[0.08em] text-[#5e5d59]">
                     {pub.status}
                   </span>
                   {pub.url ? (
@@ -55,7 +57,7 @@ export function Publications() {
                       href={pub.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex cursor-pointer items-center gap-1.5 border-b border-transparent pb-0.5 font-mono text-[12px] uppercase tracking-[0.08em] text-white/70 transition-colors duration-200 hover:border-white hover:text-white"
+                      className="inline-flex cursor-pointer items-center gap-1.5 font-mono text-[12px] uppercase tracking-[0.08em] text-[#141413] underline-offset-4 transition-colors duration-200 hover:text-[#c6613f] hover:underline"
                     >
                       {pub.doi ?? "DOI"}
                       <ExternalLink className="h-3 w-3" />

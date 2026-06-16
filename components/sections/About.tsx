@@ -19,35 +19,32 @@ export function About() {
               i === 0 ? (
                 <p
                   key={i}
-                  className="font-serif text-[22px] leading-[1.4] text-white sm:text-[24px]"
+                  className="text-[19px] leading-[1.55] text-[#141413]"
                 >
                   {paragraph}
                 </p>
               ) : (
-                <p
-                  key={i}
-                  className="text-[16px] leading-[1.5] text-white/60"
-                >
+                <p key={i} className="text-[16px] leading-[1.6] text-[#5e5d59]">
                   {paragraph}
                 </p>
               )
             )}
           </div>
 
-          <div className="h-fit rounded-none border border-white/10 bg-[#050505] p-10">
-            <p className="font-mono text-[12px] uppercase tracking-[0.1em] text-white/50">
+          <div className="h-fit rounded-[16px] bg-[#f0eee6] p-8">
+            <p className="font-mono text-[12px] uppercase tracking-[0.1em] text-[#87867f]">
               At a glance
             </p>
             <dl className="mt-5 space-y-4">
               {facts.map((f) => (
                 <div
                   key={f.label}
-                  className="border-b border-white/10 pb-3 last:border-0 last:pb-0"
+                  className="border-b border-[#d1cfc5] pb-3 last:border-0 last:pb-0"
                 >
-                  <dt className="font-mono text-[11px] uppercase tracking-[0.1em] text-white/45">
+                  <dt className="font-mono text-[11px] uppercase tracking-[0.08em] text-[#87867f]">
                     {f.label}
                   </dt>
-                  <dd className="mt-1.5 text-[14px] text-white">{f.value}</dd>
+                  <dd className="mt-1.5 text-[14px] text-[#141413]">{f.value}</dd>
                 </div>
               ))}
             </dl>

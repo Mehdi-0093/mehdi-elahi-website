@@ -1,3 +1,4 @@
+import * as React from "react";
 import { ExternalLink } from "lucide-react";
 import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
@@ -14,26 +15,26 @@ export function Projects() {
       title="Selected Projects"
       intro="Research and engineering work spanning edge-AI, hardware security, and on-chip systems."
     >
-      <div className="grid gap-px border border-white/10 bg-white/10 md:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-2">
         {projects.map((project, i) => {
           const label = fallbackLabels[i % fallbackLabels.length];
           return (
             <Reveal key={project.name} delay={(i % 2) * 80} className="h-full">
-              <div className="flex h-full flex-col bg-[#050505] p-8 transition-colors duration-200 hover:bg-[#0c0c0c]">
-                {/* Status label — Ember Coral accent, reserved for the work */}
-                <p className="font-mono text-[12px] uppercase tracking-[0.1em] text-[#e1695e]">
+              <div className="flex h-full flex-col rounded-[8px] bg-[#f0eee6] p-8">
+                {/* Status — Clay, the single accent for this section */}
+                <p className="font-mono text-[12px] uppercase tracking-[0.1em] text-[#d97757]">
                   {project.status ? project.status.toUpperCase() : label}
                 </p>
 
-                <h3 className="mt-3 font-sans text-[24px] font-light leading-[1.15] tracking-[-0.02em] text-white">
+                <h3 className="mt-3 font-sans text-[24px] font-semibold leading-[1.2] tracking-[-0.01em] text-[#141413]">
                   {project.name}
                 </h3>
 
-                <p className="mt-1.5 font-mono text-[12px] tracking-[0.04em] text-white/55">
+                <p className="mt-1.5 font-mono text-[12px] tracking-[0.02em] text-[#87867f]">
                   {project.tagline}
                 </p>
 
-                <p className="mt-3 text-[14px] leading-[1.5] text-white/65">
+                <p className="mt-3 text-[14px] leading-[1.6] text-[#3d3d3a]">
                   {project.description}
                 </p>
 
@@ -41,10 +42,10 @@ export function Projects() {
                   <div className="mt-5 flex gap-8">
                     {project.metrics.map((m) => (
                       <div key={m.label}>
-                        <div className="font-sans text-[24px] font-light leading-none tracking-[-0.02em] text-white">
+                        <div className="font-sans text-[24px] font-semibold leading-none tracking-[-0.01em] text-[#141413]">
                           {m.value}
                         </div>
-                        <div className="mt-1.5 font-mono text-[11px] uppercase tracking-[0.06em] text-white/45">
+                        <div className="mt-1.5 font-mono text-[11px] uppercase tracking-[0.06em] text-[#87867f]">
                           {m.label}
                         </div>
                       </div>
@@ -53,20 +54,24 @@ export function Projects() {
                 ) : null}
 
                 {/* Tags */}
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="inline-flex items-center rounded-none border border-white/15 px-3 py-1 font-mono text-[12px] tracking-[0.04em] text-white/70"
-                    >
-                      {tag}
-                    </span>
+                <div className="mt-5 flex flex-wrap items-center gap-x-2.5 gap-y-1.5">
+                  {project.tags.map((tag, t) => (
+                    <React.Fragment key={tag}>
+                      {t > 0 ? (
+                        <span className="text-[#b0aea5]" aria-hidden="true">
+                          ·
+                        </span>
+                      ) : null}
+                      <span className="font-mono text-[12px] tracking-[0.01em] text-[#5e5d59]">
+                        {tag}
+                      </span>
+                    </React.Fragment>
                   ))}
                 </div>
 
                 {/* Footer */}
                 <div className="mt-auto flex items-center justify-between gap-3 pt-6">
-                  <span className="font-mono text-[11px] uppercase tracking-[0.06em] text-white/40">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.06em] text-[#87867f]">
                     {project.venue ? `${project.venue} · ` : ""}
                     {project.year}
                   </span>
@@ -75,7 +80,7 @@ export function Projects() {
                       href={project.link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex cursor-pointer items-center gap-1.5 rounded-none border border-white/20 px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.08em] text-white transition-colors duration-200 hover:border-[#e1695e] hover:text-[#e1695e]"
+                      className="inline-flex cursor-pointer items-center gap-1.5 rounded-none border border-[#141413] px-3.5 py-1.5 font-sans text-[12px] font-medium text-[#141413] transition-colors duration-200 hover:bg-[#141413] hover:text-[#faf9f5]"
                     >
                       Paper
                       <ExternalLink className="h-3 w-3" />

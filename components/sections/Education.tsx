@@ -5,39 +5,39 @@ import { education } from "@/data/education";
 export function Education() {
   return (
     <Section id="education" index="05" eyebrow="Education" title="Education">
-      <div className="grid gap-px border border-white/10 bg-white/10 md:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-2">
         {education.map((item, i) => (
           <Reveal key={item.school} delay={(i % 2) * 80} className="h-full">
-            <div className="h-full bg-[#050505] p-8 transition-colors duration-200 hover:bg-[#0c0c0c]">
+            <div className="h-full rounded-[8px] bg-[#f0eee6] p-8">
               <div className="flex items-center justify-between gap-3">
-                <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-white/45">
+                <p className="font-mono text-[12px] uppercase tracking-[0.06em] text-[#87867f]">
                   {item.period}
                 </p>
                 {item.gpa ? (
-                  <span className="inline-flex items-center rounded-none border border-white/20 px-3 py-1 font-mono text-[12px] uppercase tracking-[0.06em] text-white">
+                  <span className="font-mono text-[12px] uppercase tracking-[0.06em] text-[#d97757]">
                     GPA {item.gpa}
                   </span>
                 ) : null}
               </div>
-              <h3 className="mt-4 font-sans text-[24px] font-light leading-[1.15] tracking-[-0.02em] text-white">
+              <h3 className="mt-4 font-sans text-[22px] font-semibold leading-[1.2] text-[#141413]">
                 {item.school}
               </h3>
-              <p className="mt-1.5 text-[14px] font-normal text-white/70">
+              <p className="mt-1.5 text-[14px] font-medium text-[#3d3d3a]">
                 {item.degree}
               </p>
-              <p className="mt-1 font-mono text-[12px] uppercase tracking-[0.06em] text-white/40">
+              <p className="mt-1 font-mono text-[12px] uppercase tracking-[0.06em] text-[#87867f]">
                 {item.location}
               </p>
 
               {item.specialization ? (
-                <p className="mt-4 text-[14px] leading-[1.5] text-white/65">
-                  <span className="text-white">Specialization: </span>
+                <p className="mt-4 text-[14px] leading-[1.6] text-[#5e5d59]">
+                  <span className="text-[#141413]">Specialization: </span>
                   {item.specialization}
                 </p>
               ) : null}
               {item.lab ? (
-                <p className="mt-2 text-[14px] leading-[1.5] text-white/65">
-                  <span className="text-white">Lab: </span>
+                <p className="mt-2 text-[14px] leading-[1.6] text-[#5e5d59]">
+                  <span className="text-[#141413]">Lab: </span>
                   {item.lab}
                 </p>
               ) : null}
