@@ -16,10 +16,10 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#fcfcfb",
+          background: "#000000",
           padding: "80px",
           fontFamily: "sans-serif",
-          borderTop: "12px solid #1e3a5f",
+          borderTop: "12px solid #e1695e",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
@@ -30,16 +30,22 @@ export default function OpengraphImage() {
               justifyContent: "center",
               width: "64px",
               height: "64px",
-              borderRadius: "14px",
-              background: "#1e3a5f",
+              background: "#e1695e",
               color: "#ffffff",
-              fontSize: "30px",
+              fontSize: "28px",
               fontWeight: 700,
             }}
           >
             ME
           </div>
-          <div style={{ fontSize: "24px", color: "#565d6b" }}>
+          <div
+            style={{
+              fontSize: "20px",
+              color: "#808080",
+              textTransform: "uppercase",
+              letterSpacing: "4px",
+            }}
+          >
             {profile.location}
           </div>
         </div>
@@ -47,23 +53,32 @@ export default function OpengraphImage() {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
-              fontSize: "84px",
-              fontWeight: 700,
-              color: "#15181d",
-              lineHeight: 1.04,
+              fontSize: "92px",
+              fontWeight: 400,
+              color: "#ffffff",
+              lineHeight: 0.95,
+              letterSpacing: "-4px",
             }}
           >
             {profile.name}
           </div>
-          <div style={{ fontSize: "34px", color: "#1e3a5f", marginTop: "18px" }}>
+          <div style={{ fontSize: "32px", color: "#ffffff", marginTop: "22px" }}>
             {profile.title}
           </div>
-          <div style={{ fontSize: "26px", color: "#565d6b", marginTop: "8px" }}>
+          <div style={{ fontSize: "24px", color: "#9a9a9a", marginTop: "8px" }}>
             {profile.subtitle}
           </div>
         </div>
 
-        <div style={{ fontSize: "22px", color: "#8b93a1" }}>
+        <div
+          style={{
+            fontSize: "20px",
+            color: "#808080",
+            fontFamily: "monospace",
+            textTransform: "uppercase",
+            letterSpacing: "2px",
+          }}
+        >
           {site.url.replace("https://", "")}
         </div>
       </div>

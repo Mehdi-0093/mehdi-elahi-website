@@ -26,7 +26,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={cn("border-t border-[#000000] py-20 sm:py-28", className)}
+      className={cn("border-t border-white/10 py-20 sm:py-28", className)}
     >
       <div
         className={cn(
@@ -36,14 +36,14 @@ export function Section({
       >
         <Reveal>
           <header className="mb-12 sm:mb-16">
-            <p className="font-mono text-[12px] font-medium uppercase tracking-[-0.24px] text-[#797776]">
-              • {index} &nbsp; {eyebrow}
+            <p className="font-mono text-[12px] uppercase tracking-[0.1em] text-white/50">
+              {index} &nbsp;/&nbsp; {eyebrow}
             </p>
-            <h2 className="mt-4 font-serif text-[29px] font-normal leading-[1.2] tracking-[-0.58px] text-[#000000] sm:text-[40px] sm:tracking-[-0.8px]">
+            <h2 className="mt-5 font-sans text-[34px] font-light leading-[0.95] tracking-[-0.04em] text-white sm:text-[52px]">
               {title}
             </h2>
             {intro ? (
-              <p className="mt-4 max-w-2xl text-[16px] leading-[1.35] tracking-[-0.32px] text-[#4e4d4d]">
+              <p className="mt-5 max-w-2xl text-[16px] leading-[1.4] text-white/60">
                 {intro}
               </p>
             ) : null}

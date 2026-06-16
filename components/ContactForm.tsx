@@ -47,7 +47,7 @@ export function ContactForm() {
     <form
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className="rounded-[40px] bg-[#cfdaf5] p-6 shadow-[0_0_10px_0_rgba(0,0,0,0.1)] sm:p-9"
+      className="rounded-none border border-white/10 bg-[#050505] p-6 sm:p-9"
     >
       <input
         ref={honeypot}
@@ -109,13 +109,13 @@ export function ContactForm() {
         </Button>
 
         {status === "success" ? (
-          <p className="inline-flex items-center gap-2 text-sm text-emerald-600">
+          <p className="inline-flex items-center gap-2 text-sm text-white">
             <CheckCircle2 className="h-4 w-4" />
             Thanks — I&apos;ll be in touch soon.
           </p>
         ) : null}
         {status === "error" ? (
-          <p className="inline-flex items-center gap-2 text-sm text-red-600">
+          <p className="inline-flex items-center gap-2 text-sm text-[#e1695e]">
             <AlertCircle className="h-4 w-4" />
             Something went wrong. Please email me directly.
           </p>
@@ -138,10 +138,10 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-1.5 flex items-center gap-2 font-mono text-[12px] font-medium uppercase tracking-[-0.24px] text-[#000000]">
+      <span className="mb-1.5 flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.08em] text-white">
         {label}
         {optional ? (
-          <span className="font-sans text-xs font-normal normal-case text-[#797776]">(optional)</span>
+          <span className="font-sans text-xs normal-case tracking-normal text-white/45">(optional)</span>
         ) : null}
       </span>
       {children}

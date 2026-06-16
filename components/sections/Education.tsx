@@ -5,37 +5,39 @@ import { education } from "@/data/education";
 export function Education() {
   return (
     <Section id="education" index="05" eyebrow="Education" title="Education">
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-px border border-white/10 bg-white/10 md:grid-cols-2">
         {education.map((item, i) => (
-          <Reveal key={item.school} delay={(i % 2) * 80}>
-            <div className="h-full rounded-[40px] bg-[#cfdaf5] p-8 shadow-[0_0_10px_0_rgba(0,0,0,0.1)]">
+          <Reveal key={item.school} delay={(i % 2) * 80} className="h-full">
+            <div className="h-full bg-[#050505] p-8 transition-colors duration-200 hover:bg-[#0c0c0c]">
               <div className="flex items-center justify-between gap-3">
-                <p className="font-mono text-[12px] text-[#797776]">
+                <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-white/45">
                   {item.period}
                 </p>
                 {item.gpa ? (
-                  <span className="inline-flex items-center rounded-[100px] border border-[#000000] px-3 py-1 font-mono text-[12px] font-medium text-[#000000]">
+                  <span className="inline-flex items-center rounded-none border border-white/20 px-3 py-1 font-mono text-[12px] uppercase tracking-[0.06em] text-white">
                     GPA {item.gpa}
                   </span>
                 ) : null}
               </div>
-              <h3 className="mt-4 font-serif text-[24px] font-normal leading-[1.2] tracking-[-0.48px] text-[#000000]">
+              <h3 className="mt-4 font-sans text-[24px] font-light leading-[1.15] tracking-[-0.02em] text-white">
                 {item.school}
               </h3>
-              <p className="mt-1 text-[14px] font-medium tracking-[-0.28px] text-[#4e4d4d]">
+              <p className="mt-1.5 text-[14px] font-normal text-white/70">
                 {item.degree}
               </p>
-              <p className="font-mono text-[12px] text-[#797776]">{item.location}</p>
+              <p className="mt-1 font-mono text-[12px] uppercase tracking-[0.06em] text-white/40">
+                {item.location}
+              </p>
 
               {item.specialization ? (
-                <p className="mt-4 text-[14px] leading-[1.35] tracking-[-0.28px] text-[#4e4d4d]">
-                  <span className="font-medium text-[#000000]">Specialization: </span>
+                <p className="mt-4 text-[14px] leading-[1.5] text-white/65">
+                  <span className="text-white">Specialization: </span>
                   {item.specialization}
                 </p>
               ) : null}
               {item.lab ? (
-                <p className="mt-2 text-[14px] leading-[1.35] tracking-[-0.28px] text-[#4e4d4d]">
-                  <span className="font-medium text-[#000000]">Lab: </span>
+                <p className="mt-2 text-[14px] leading-[1.5] text-white/65">
+                  <span className="text-white">Lab: </span>
                   {item.lab}
                 </p>
               ) : null}

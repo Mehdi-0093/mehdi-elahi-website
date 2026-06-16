@@ -1,48 +1,43 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Monad color tokens */
-  --color-parchment-cream: #f6f3f1;
-  --color-ink-black: #000000;
-  --color-charcoal: #242424;
-  --color-graphite: #4e4d4d;
-  --color-slate-shadow: #3d3d3d;
-  --color-warm-stone: #797776;
-  --color-lavender-mist: #cfdaf5;
+  /* Stink Studios color tokens */
+  --color-void: #000000;
+  --color-bone: #ffffff;
+  --color-soot: #050505;
+  --color-ember-coral: #e1695e;
+  --color-burnt-sienna: #573332;
 
   /* Semantic aliases — kept so existing component classes still resolve */
-  --color-bg: #f6f3f1;
-  --color-surface: #f6f3f1;
-  --color-surface-2: #cfdaf5;
-  --color-ink: #000000;
-  --color-muted: #4e4d4d;
-  --color-subtle: #797776;
-  --color-border: #000000;
-  --color-border-strong: #000000;
-  --color-accent: #242424;
-  --color-accent-hover: #000000;
-  --color-accent-soft: #cfdaf5;
+  --color-bg: #000000;
+  --color-surface: #050505;
+  --color-surface-2: #141414;
+  --color-ink: #ffffff;
+  --color-muted: #a3a3a3;
+  --color-subtle: #808080;
+  --color-border: #1f1f1f;
+  --color-border-strong: #ffffff;
+  --color-accent: #e1695e;
+  --color-accent-hover: #d65a4f;
+  --color-accent-soft: #573332;
 
-  /* Fonts — serif for headlines, sans for body, mono for functional UI copy */
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-source-serif);
-  --font-mono: var(--font-jetbrains);
+  /* Fonts — Helvetica workhorse, Times New Roman editorial serif, Courier mono labels */
+  --font-sans: Helvetica, "Helvetica Neue", var(--font-inter), Arial, sans-serif;
+  --font-serif: "Times New Roman", Times, Georgia, serif;
+  --font-mono: "Courier New", Courier, var(--font-jetbrains), ui-monospace, monospace;
 
-  /* Typography scale — Minor Third 1.2 from 16px base */
-  --text-caption: 12px;
-  --text-body-sm: 14px;
+  /* Typography scale — cinematic: compressed display, wide mono captions */
+  --text-caption: 14px;
   --text-body: 16px;
-  --text-subheading: 18px;
-  --text-heading-sm: 24px;
-  --text-heading: 32px;
-  --text-heading-lg: 40px;
-  --text-display: 80px;
+  --text-subheading: 19px;
+  --text-heading-sm: 23px;
+  --text-heading: 52px;
+  --text-display: 60px;
 
-  /* Shape */
-  --radius-card: 40px;
-  --radius-pill: 100px;
-  --radius-input: 8px;
-  --shadow-card: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  /* Shape — 0px is the signature; only inputs round */
+  --radius-card: 0px;
+  --radius-pill: 0px;
+  --radius-input: 10px;
 }
 
 :root {
@@ -61,19 +56,22 @@
   body {
     background-color: var(--color-bg);
     color: var(--color-ink);
-    font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-family:
+      Helvetica, "Helvetica Neue", var(--font-sans), Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
+  /* Helvetica thin carries display weight; Times New Roman is applied
+     selectively via font-serif for sparing editorial moments. */
   h1,
   h2,
   h3,
   h4 {
-    font-family: var(--font-serif), ui-serif, Georgia, serif;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    color: var(--color-bone);
   }
 
   section[id] {
@@ -81,14 +79,13 @@
   }
 
   ::selection {
-    background: var(--color-ink);
-    color: var(--color-parchment-cream);
+    background: var(--color-bone);
+    color: var(--color-void);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-bone);
     outline-offset: 2px;
-    border-radius: 3px;
   }
 }
 

@@ -14,23 +14,40 @@ export function About() {
     <Section id="about" index="01" eyebrow="About" title="About">
       <Reveal>
         <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr] lg:gap-16">
-          <div className="space-y-5 text-[16px] leading-[1.35] tracking-[-0.32px] text-[#4e4d4d]">
-            {profile.summary.map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
+          <div className="space-y-5">
+            {profile.summary.map((paragraph, i) =>
+              i === 0 ? (
+                <p
+                  key={i}
+                  className="font-serif text-[22px] leading-[1.4] text-white sm:text-[24px]"
+                >
+                  {paragraph}
+                </p>
+              ) : (
+                <p
+                  key={i}
+                  className="text-[16px] leading-[1.5] text-white/60"
+                >
+                  {paragraph}
+                </p>
+              )
+            )}
           </div>
 
-          <div className="h-fit rounded-[40px] bg-[#cfdaf5] p-10 shadow-[0_0_10px_0_rgba(0,0,0,0.1)]">
-            <p className="font-mono text-[12px] font-medium uppercase tracking-[-0.24px] text-[#4e4d4d]">
-              • At a glance
+          <div className="h-fit rounded-none border border-white/10 bg-[#050505] p-10">
+            <p className="font-mono text-[12px] uppercase tracking-[0.1em] text-white/50">
+              At a glance
             </p>
             <dl className="mt-5 space-y-4">
               {facts.map((f) => (
-                <div key={f.label} className="border-b border-[#000000]/15 pb-3 last:border-0 last:pb-0">
-                  <dt className="font-mono text-[11px] font-medium uppercase tracking-[-0.22px] text-[#4e4d4d]">
+                <div
+                  key={f.label}
+                  className="border-b border-white/10 pb-3 last:border-0 last:pb-0"
+                >
+                  <dt className="font-mono text-[11px] uppercase tracking-[0.1em] text-white/45">
                     {f.label}
                   </dt>
-                  <dd className="mt-1 text-[14px] tracking-[-0.28px] text-[#000000]">{f.value}</dd>
+                  <dd className="mt-1.5 text-[14px] text-white">{f.value}</dd>
                 </div>
               ))}
             </dl>

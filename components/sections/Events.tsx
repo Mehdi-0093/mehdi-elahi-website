@@ -12,30 +12,30 @@ export function Events() {
       intro="Conferences and symposia I've presented at or attended."
     >
       <Reveal>
-        <ul className="overflow-hidden rounded-[40px] bg-[#cfdaf5] shadow-[0_0_10px_0_rgba(0,0,0,0.1)]">
+        <ul className="overflow-hidden rounded-none border border-white/10 bg-[#050505]">
           {events.map((event, i) => (
             <li
               key={event.name}
               className={`flex flex-col gap-3 p-6 sm:flex-row sm:items-center sm:justify-between ${
-                i > 0 ? "border-t border-[#000000]/15" : ""
+                i > 0 ? "border-t border-white/10" : ""
               }`}
             >
               <div className="min-w-0">
-                <p className="text-[#000000]">
-                  <span className="font-mono text-[13px] font-medium text-[#000000]">
+                <p>
+                  <span className="font-mono text-[13px] uppercase tracking-[0.06em] text-white">
                     {event.name}
                   </span>
-                  <span className="mx-2 text-[#797776]">—</span>
-                  <span className="text-[14px] tracking-[-0.28px] text-[#4e4d4d]">{event.full}</span>
+                  <span className="mx-2 text-white/30">—</span>
+                  <span className="text-[14px] text-white/60">{event.full}</span>
                 </p>
                 {event.location ? (
-                  <p className="mt-0.5 font-mono text-[12px] text-[#797776]">
+                  <p className="mt-1 font-mono text-[12px] uppercase tracking-[0.06em] text-white/40">
                     {event.location}
                   </p>
                 ) : null}
               </div>
               {event.role ? (
-                <span className="self-start whitespace-nowrap rounded-[100px] border border-[#000000] px-3 py-1 font-mono text-[12px] font-medium text-[#000000] sm:self-auto">
+                <span className="self-start whitespace-nowrap rounded-none border border-white/15 px-3 py-1 font-mono text-[12px] uppercase tracking-[0.08em] text-white/70 sm:self-auto">
                   {event.role}
                 </span>
               ) : null}

@@ -11,38 +11,40 @@ export function Hero() {
       className="pt-[calc(var(--nav-h)+4rem)] pb-24 sm:pt-[calc(var(--nav-h)+5rem)] sm:pb-32"
     >
       <div className="mx-auto w-full max-w-[1200px] px-6 sm:px-8">
-        <div className="grid items-start gap-12 lg:grid-cols-[1fr_380px] lg:gap-16 xl:gap-24">
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_400px] lg:gap-16 xl:gap-24">
 
           {/* Left column — text content */}
           <div>
             {/* Availability badge */}
             <Reveal>
-              <span className="inline-flex items-center gap-2 rounded-[100px] border border-[#000000] px-3.5 py-1.5 font-mono text-[12px] font-medium uppercase tracking-[-0.24px] text-[#4e4d4d]">
+              <span className="inline-flex items-center gap-2.5 rounded-none border border-white/20 px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.1em] text-white/70">
                 <span className="relative flex h-1.5 w-1.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-white" />
                 </span>
                 Open to 2026–2027 internships
               </span>
             </Reveal>
 
-            {/* Display headline */}
+            {/* Display headline — Helvetica thin, cinematic compressed block */}
             <Reveal delay={60}>
-              <h1 className="mt-8 font-serif text-[52px] font-normal leading-[1.1] tracking-[-1.04px] text-[#000000] sm:text-[68px] sm:tracking-[-1.36px] lg:text-[80px] lg:leading-[1.05] lg:tracking-[-1.6px]">
+              <h1 className="mt-8 font-sans text-[56px] font-light leading-[0.92] tracking-[-0.05em] text-white sm:text-[80px] lg:text-[92px]">
                 {profile.name}
               </h1>
             </Reveal>
 
+            {/* Role — Courier slate marking */}
             <Reveal delay={120}>
-              <p className="mt-4 text-[18px] font-normal leading-[1.35] tracking-[-0.36px] text-[#4e4d4d]">
+              <p className="mt-6 font-mono text-[12px] uppercase leading-[1.6] tracking-[0.1em] text-white/55">
                 {profile.title}
-                <span className="mx-2 text-[#797776]">·</span>
+                <span className="mx-2 text-white/30">/</span>
                 {profile.subtitle}
               </p>
             </Reveal>
 
+            {/* Tagline — Times New Roman editorial statement */}
             <Reveal delay={180}>
-              <p className="mt-5 max-w-[500px] text-[16px] leading-[1.35] tracking-[-0.32px] text-[#797776]">
+              <p className="mt-6 max-w-[520px] font-serif text-[22px] font-normal leading-[1.3] text-white/85 sm:text-[26px]">
                 {profile.tagline}
               </p>
             </Reveal>
@@ -52,7 +54,7 @@ export function Hero() {
               <div className="mt-10 flex flex-wrap items-center gap-3">
                 <a
                   href="#contact"
-                  className="inline-flex cursor-pointer items-center gap-2 rounded-[100px] bg-[#242424] px-6 py-2.5 font-mono text-[14px] font-medium text-[#f6f3f1] transition-colors duration-200 hover:bg-[#000000]"
+                  className="inline-flex cursor-pointer items-center gap-2 rounded-none bg-white px-6 py-3 font-mono text-[13px] uppercase tracking-[0.08em] text-black transition-colors duration-200 hover:bg-white/85"
                 >
                   <Mail className="h-4 w-4" />
                   Get in touch
@@ -60,17 +62,17 @@ export function Hero() {
                 <a
                   href={profile.cvPath}
                   download
-                  className="inline-flex cursor-pointer items-center gap-2 rounded-[100px] border border-[#000000] px-6 py-2.5 font-mono text-[14px] font-medium text-[#000000] transition-colors duration-200 hover:bg-[#000000] hover:text-[#f6f3f1]"
+                  className="inline-flex cursor-pointer items-center gap-2 rounded-none border border-white/30 px-6 py-3 font-mono text-[13px] uppercase tracking-[0.08em] text-white transition-colors duration-200 hover:border-white hover:bg-white/5"
                 >
                   <Download className="h-4 w-4" />
                   Download CV
                 </a>
                 <a
                   href="#projects"
-                  className="inline-flex cursor-pointer items-center gap-2 rounded-[100px] px-5 py-2.5 font-mono text-[14px] font-medium text-[#797776] transition-colors duration-200 hover:text-[#000000]"
+                  className="group inline-flex cursor-pointer items-center gap-2 px-1 py-3 font-mono text-[13px] uppercase tracking-[0.08em] text-white/60 transition-colors duration-200 hover:text-white"
                 >
                   View projects
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
                 </a>
               </div>
             </Reveal>
@@ -88,7 +90,7 @@ export function Hero() {
                       target={external ? "_blank" : undefined}
                       rel={external ? "noopener noreferrer" : undefined}
                       aria-label={s.label}
-                      className="inline-flex cursor-pointer items-center gap-2 rounded-[100px] border border-[#3d3d3d]/30 px-3.5 py-2 font-mono text-[12px] font-medium text-[#4e4d4d] transition-colors duration-200 hover:border-[#000000] hover:text-[#000000]"
+                      className="inline-flex cursor-pointer items-center gap-2 rounded-none border border-white/15 px-3.5 py-2 font-mono text-[12px] uppercase tracking-[0.08em] text-white/55 transition-colors duration-200 hover:border-white hover:text-white"
                     >
                       <Icon className="h-4 w-4" />
                       <span className="hidden sm:inline">{s.handle}</span>
@@ -99,21 +101,21 @@ export function Hero() {
             </Reveal>
           </div>
 
-          {/* Right column — headshot photo */}
+          {/* Right column — headshot photo, full-bleed cinematic still */}
           <Reveal delay={80} className="order-first lg:order-last">
-            <div className="mx-auto w-[220px] sm:w-[280px] lg:mx-0 lg:w-full">
-              <div className="overflow-hidden rounded-[8px] border border-[#000000]">
+            <div className="mx-auto w-[240px] sm:w-[300px] lg:mx-0 lg:w-full">
+              <div className="overflow-hidden rounded-none border border-white/15">
                 <Image
                   src="/photo.jpg"
                   alt={`${profile.name} — portrait`}
-                  width={380}
-                  height={480}
+                  width={400}
+                  height={500}
                   priority
-                  className="block w-full object-cover grayscale"
-                  sizes="(max-width: 640px) 220px, (max-width: 1024px) 280px, 380px"
+                  className="block w-full object-cover grayscale contrast-[1.05]"
+                  sizes="(max-width: 640px) 240px, (max-width: 1024px) 300px, 400px"
                 />
               </div>
-              <p className="mt-2.5 text-center font-mono text-[10px] uppercase tracking-[-0.2px] text-[#797776] lg:text-left">
+              <p className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.18em] text-white/40 lg:text-left">
                 {profile.name}
               </p>
             </div>

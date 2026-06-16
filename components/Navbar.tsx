@@ -41,7 +41,7 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 h-[var(--nav-h)] transition-colors",
         scrolled
-          ? "border-b border-[#000000] bg-[#f6f3f1]/90 backdrop-blur-md"
+          ? "border-b border-white/10 bg-black/80 backdrop-blur-md"
           : "border-b border-transparent"
       )}
     >
@@ -49,23 +49,23 @@ export function Navbar() {
         {/* Wordmark */}
         <a
           href="#top"
-          className="shrink-0 cursor-pointer whitespace-nowrap font-serif text-[18px] font-normal tracking-[-0.02em] text-[#000000]"
+          className="shrink-0 cursor-pointer whitespace-nowrap font-sans text-[20px] font-light tracking-[-0.04em] text-white"
           aria-label={`${profile.name} — back to top`}
         >
           {profile.name}
         </a>
 
         {/* Desktop nav */}
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden items-center gap-5 lg:flex">
           {navItems.map(({ id, label }) => (
             <a
               key={id}
               href={`#${id}`}
               className={cn(
-                "cursor-pointer rounded-[100px] px-3.5 py-1.5 font-mono text-[12px] font-medium uppercase tracking-[0.04em] transition-colors duration-200",
+                "cursor-pointer border-b border-transparent pb-0.5 font-mono text-[12px] uppercase tracking-[0.1em] transition-colors duration-200",
                 active === id
-                  ? "bg-[#242424] text-[#f6f3f1]"
-                  : "text-[#797776] hover:text-[#000000]"
+                  ? "border-white text-white"
+                  : "text-white/50 hover:border-white hover:text-white"
               )}
             >
               {label}
@@ -74,7 +74,7 @@ export function Navbar() {
           <a
             href={profile.cvPath}
             download
-            className="ml-3 inline-flex cursor-pointer items-center gap-1.5 rounded-[100px] border border-[#000000] px-4 py-1.5 font-mono text-[12px] font-medium text-[#000000] transition-colors duration-200 hover:bg-[#000000] hover:text-[#f6f3f1]"
+            className="ml-2 inline-flex cursor-pointer items-center gap-1.5 rounded-none border border-white/30 px-4 py-1.5 font-mono text-[12px] uppercase tracking-[0.1em] text-white transition-colors duration-200 hover:bg-white hover:text-black"
           >
             <Download className="h-3.5 w-3.5" />
             CV
@@ -85,7 +85,7 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="grid h-10 w-10 cursor-pointer place-items-center rounded-[100px] text-[#000000] hover:bg-[#cfdaf5] lg:hidden"
+          className="grid h-10 w-10 cursor-pointer place-items-center rounded-none text-white hover:bg-white/10 lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >
@@ -95,7 +95,7 @@ export function Navbar() {
 
       {/* Mobile panel */}
       {open ? (
-        <div className="border-b border-[#000000] bg-[#f6f3f1] lg:hidden">
+        <div className="border-b border-white/10 bg-black lg:hidden">
           <div className="mx-auto flex max-w-[1200px] flex-col gap-1 px-6 py-4 sm:px-8">
             {navItems.map(({ id, label }) => (
               <a
@@ -103,10 +103,10 @@ export function Navbar() {
                 href={`#${id}`}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "cursor-pointer rounded-[100px] px-4 py-2.5 font-mono text-[12px] font-medium uppercase tracking-[0.04em] transition-colors duration-200",
+                  "cursor-pointer px-1 py-2.5 font-mono text-[12px] uppercase tracking-[0.1em] transition-colors duration-200",
                   active === id
-                    ? "bg-[#242424] text-[#f6f3f1]"
-                    : "text-[#797776] hover:text-[#000000]"
+                    ? "text-white"
+                    : "text-white/50 hover:text-white"
                 )}
               >
                 {label}
@@ -116,7 +116,7 @@ export function Navbar() {
               href={profile.cvPath}
               download
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-[100px] border border-[#000000] px-4 py-2.5 font-mono text-[12px] font-medium text-[#000000] hover:bg-[#000000] hover:text-[#f6f3f1]"
+              className="mt-2 inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-none border border-white/30 px-4 py-2.5 font-mono text-[12px] uppercase tracking-[0.1em] text-white transition-colors duration-200 hover:bg-white hover:text-black"
             >
               <Download className="h-3.5 w-3.5" />
               Download CV
