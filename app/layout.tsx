@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Newsreader, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { site } from "@/data/site";
@@ -11,13 +11,6 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-});
-
-const newsreader = Newsreader({
-  subsets: ["latin"],
-  variable: "--font-newsreader",
-  display: "swap",
-  style: ["normal", "italic"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -74,7 +67,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${newsreader.variable} ${jetbrainsMono.variable} antialiased`}
+      className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <body className="min-h-screen">
         <a

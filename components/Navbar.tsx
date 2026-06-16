@@ -3,7 +3,6 @@
 import * as React from "react";
 import { Menu, X, Download } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
 import { navItems } from "@/data/navigation";
 import { profile } from "@/data/profile";
 
@@ -12,7 +11,6 @@ export function Navbar() {
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
 
-  // Highlight the section currently in view.
   React.useEffect(() => {
     const sections = navItems
       .map((n) => document.getElementById(n.id))
@@ -31,7 +29,6 @@ export function Navbar() {
     return () => observer.disconnect();
   }, []);
 
-  // Add a subtle border/blur once the page is scrolled.
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
@@ -44,22 +41,18 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 h-[var(--nav-h)] transition-colors",
         scrolled
-          ? "border-b border-border bg-bg/85 backdrop-blur-md"
+          ? "border-b border-[#e5e6e1] bg-white/90 backdrop-blur-md"
           : "border-b border-transparent"
       )}
     >
-      <nav className="mx-auto flex h-full max-w-5xl items-center justify-between gap-4 px-5 sm:px-8">
+      <nav className="mx-auto flex h-full max-w-[1200px] items-center justify-between gap-4 px-6 sm:px-8">
+        {/* Wordmark */}
         <a
           href="#top"
-          className="group flex shrink-0 items-center gap-2.5"
+          className="shrink-0 whitespace-nowrap font-sans text-[15px] font-medium tracking-[-0.03em] text-[#151515]"
           aria-label={`${profile.name} — back to top`}
         >
-          <span className="grid h-9 w-9 place-items-center rounded-md bg-accent font-mono text-sm font-semibold text-white">
-            {profile.initials}
-          </span>
-          <span className="whitespace-nowrap font-serif text-base font-medium tracking-tight">
-            {profile.name}
-          </span>
+          {profile.name.toUpperCase()}
         </a>
 
         {/* Desktop nav */}
@@ -69,22 +62,21 @@ export function Navbar() {
               key={id}
               href={`#${id}`}
               className={cn(
-                "relative px-3 py-2 text-sm transition-colors",
-                active === id ? "text-accent" : "text-muted hover:text-ink"
+                "rounded-[100px] px-3.5 py-1.5 text-[13px] font-medium uppercase tracking-[0.04em] transition-colors",
+                active === id
+                  ? "bg-[#151515] text-white"
+                  : "text-[#808080] hover:text-[#151515]"
               )}
             >
               {label}
-              {active === id ? (
-                <span className="absolute inset-x-3 -bottom-px h-px bg-accent" />
-              ) : null}
             </a>
           ))}
           <a
             href={profile.cvPath}
             download
-            className={cn(buttonVariants({ size: "sm" }), "ml-2")}
+            className="ml-3 inline-flex items-center gap-1.5 rounded-[1000px] border border-[#333333] px-4 py-1.5 text-[13px] font-medium text-[#151515] transition-colors hover:bg-[#151515] hover:text-white"
           >
-            <Download className="h-4 w-4" />
+            <Download className="h-3.5 w-3.5" />
             CV
           </a>
         </div>
@@ -93,7 +85,7 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="grid h-10 w-10 place-items-center rounded-md text-ink hover:bg-surface-2 lg:hidden"
+          className="grid h-10 w-10 place-items-center rounded-[100px] text-[#151515] hover:bg-[#e5e6e1] lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >
@@ -103,18 +95,18 @@ export function Navbar() {
 
       {/* Mobile panel */}
       {open ? (
-        <div className="border-b border-border bg-bg lg:hidden">
-          <div className="mx-auto flex max-w-5xl flex-col px-5 py-3 sm:px-8">
+        <div className="border-b border-[#e5e6e1] bg-white lg:hidden">
+          <div className="mx-auto flex max-w-[1200px] flex-col gap-1 px-6 py-4 sm:px-8">
             {navItems.map(({ id, label }) => (
               <a
                 key={id}
                 href={`#${id}`}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "rounded-md px-3 py-3 text-sm transition-colors",
+                  "rounded-[100px] px-4 py-2.5 text-[13px] font-medium uppercase tracking-[0.04em] transition-colors",
                   active === id
-                    ? "bg-accent-soft text-accent"
-                    : "text-muted hover:bg-surface-2 hover:text-ink"
+                    ? "bg-[#151515] text-white"
+                    : "text-[#808080] hover:text-[#151515]"
                 )}
               >
                 {label}
@@ -124,9 +116,9 @@ export function Navbar() {
               href={profile.cvPath}
               download
               onClick={() => setOpen(false)}
-              className={cn(buttonVariants({ size: "sm" }), "mt-2 w-full")}
+              className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-[1000px] border border-[#333333] px-4 py-2.5 text-[13px] font-medium text-[#151515] hover:bg-[#151515] hover:text-white"
             >
-              <Download className="h-4 w-4" />
+              <Download className="h-3.5 w-3.5" />
               Download CV
             </a>
           </div>

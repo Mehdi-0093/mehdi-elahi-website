@@ -1,21 +1,39 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Colors — clean light academic */
-  --color-bg: #fcfcfb;
-  --color-surface: #ffffff;
-  --color-surface-2: #f5f5f1;
-  --color-ink: #15181d;
-  --color-muted: #565d6b;
-  --color-subtle: #8b93a1;
-  --color-border: #e7e5dd;
-  --color-accent: #1e3a5f;
-  --color-accent-hover: #152c49;
-  --color-accent-soft: #eaf0f6;
+  /* Huddle color tokens */
+  --color-paper-white: #ffffff;
+  --color-ink-black: #151515;
+  --color-graphite: #23241f;
+  --color-slate-gray: #3a4444;
+  --color-stone-border: #333333;
+  --color-mist-gray: #808080;
+  --color-bone: #e5e6e1;
+  --color-pale-sage: #d3e5e9;
+  --color-lavender-mist: #bbb2ce;
+  --color-dusty-rose: #cb9da2;
+  --color-deep-violet: #453b60;
+  --color-burnt-amber: #65451d;
+  --color-honey-gold: #e4b976;
+  --color-burgundy: #5c2529;
+  --color-blush-border: #d79caa;
 
-  /* Fonts (wired in app/layout.tsx via next/font) */
+  /* Semantic aliases — kept so existing component classes still resolve */
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-2: #f5f4f0;
+  --color-ink: #151515;
+  --color-muted: #3a4444;
+  --color-subtle: #808080;
+  --color-border: #e5e6e1;
+  --color-border-strong: #333333;
+  --color-accent: #65451d;
+  --color-accent-hover: #4a3214;
+  --color-accent-soft: #f5ede3;
+
+  /* Fonts — Inter carries the full hierarchy; JetBrains Mono for identifiers */
   --font-sans: var(--font-inter);
-  --font-serif: var(--font-newsreader);
+  --font-serif: var(--font-inter);
   --font-mono: var(--font-jetbrains);
 }
 
@@ -35,7 +53,7 @@
   body {
     background-color: var(--color-bg);
     color: var(--color-ink);
-    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -44,9 +62,9 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-serif), Georgia, "Times New Roman", serif;
-    font-weight: 500;
-    letter-spacing: -0.012em;
+    font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.022em;
     color: var(--color-ink);
   }
 
@@ -55,7 +73,7 @@
   }
 
   ::selection {
-    background: var(--color-accent);
+    background: var(--color-ink);
     color: #fff;
   }
 
@@ -69,10 +87,10 @@
 /* Scroll-reveal (driven by components/Reveal.tsx) */
 .reveal {
   opacity: 0;
-  transform: translateY(14px);
+  transform: translateY(10px);
   transition:
-    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 .reveal.is-visible {

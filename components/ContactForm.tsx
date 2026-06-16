@@ -47,7 +47,7 @@ export function ContactForm() {
     <form
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className="rounded-xl border border-border bg-surface p-6 sm:p-7"
+      className="rounded-lg border border-[#333333] bg-white p-6 sm:p-7"
     >
       <input
         ref={honeypot}

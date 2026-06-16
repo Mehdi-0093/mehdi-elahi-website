@@ -14,21 +14,23 @@ export function About() {
     <Section id="about" index="01" eyebrow="About" title="About">
       <Reveal>
         <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr] lg:gap-16">
-          <div className="space-y-5 text-base leading-relaxed text-muted sm:text-[17px]">
+          <div className="space-y-5 text-[16px] leading-[1.6] text-[#3a4444]">
             {profile.summary.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
           </div>
 
-          <div className="h-fit rounded-xl border border-border bg-surface p-6">
-            <p className="font-mono text-xs uppercase tracking-[0.16em] text-subtle">
-              At a glance
+          <div className="h-fit rounded-lg border border-[#333333] bg-white p-6">
+            <p className="font-sans text-[12px] font-medium uppercase tracking-[0.08em] text-[#808080]">
+              • At a glance
             </p>
-            <dl className="mt-4 space-y-4">
+            <dl className="mt-5 space-y-4">
               {facts.map((f) => (
-                <div key={f.label}>
-                  <dt className="text-xs text-subtle">{f.label}</dt>
-                  <dd className="mt-0.5 text-sm text-ink">{f.value}</dd>
+                <div key={f.label} className="border-b border-[#e5e6e1] pb-3 last:border-0 last:pb-0">
+                  <dt className="text-[12px] font-medium uppercase tracking-[0.06em] text-[#808080]">
+                    {f.label}
+                  </dt>
+                  <dd className="mt-1 text-[14px] text-[#151515]">{f.value}</dd>
                 </div>
               ))}
             </dl>

@@ -14,34 +14,42 @@ export function Contact() {
       title="Get in touch"
       intro="Open to internship opportunities, research collaborations, and conversations about hardware/software co-design, verification, and edge-AI systems."
     >
-      <div className="grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
+      <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
         <Reveal>
           <div className="space-y-8">
-            <div className="space-y-4">
+            <div className="space-y-3">
               <a
                 href={`mailto:${profile.email}`}
-                className="flex items-center gap-3 text-ink transition-colors hover:text-accent"
+                className="flex items-center gap-3 text-[#151515] transition-colors hover:text-[#65451d]"
               >
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-md bg-accent-soft text-accent">
-                  <Mail className="h-5 w-5" />
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[8px] border border-[#333333] text-[#65451d]">
+                  <Mail className="h-4.5 w-4.5" />
                 </span>
                 <span className="min-w-0">
-                  <span className="block text-xs text-subtle">Email</span>
-                  <span className="truncate text-sm">{profile.email}</span>
+                  <span className="block text-[11px] font-medium uppercase tracking-[0.06em] text-[#808080]">
+                    Email
+                  </span>
+                  <span className="truncate text-[14px] text-[#151515]">
+                    {profile.email}
+                  </span>
                 </span>
               </a>
-              <div className="flex items-center gap-3 text-ink">
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-md bg-accent-soft text-accent">
-                  <MapPin className="h-5 w-5" />
+              <div className="flex items-center gap-3 text-[#151515]">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[8px] border border-[#333333] text-[#65451d]">
+                  <MapPin className="h-4.5 w-4.5" />
                 </span>
                 <span>
-                  <span className="block text-xs text-subtle">Location</span>
-                  <span className="text-sm">{profile.location}</span>
+                  <span className="block text-[11px] font-medium uppercase tracking-[0.06em] text-[#808080]">
+                    Location
+                  </span>
+                  <span className="text-[14px] text-[#151515]">
+                    {profile.location}
+                  </span>
                 </span>
               </div>
             </div>
 
-            <p className="text-sm leading-relaxed text-muted">
+            <p className="text-[14px] leading-[1.6] text-[#3a4444]">
               {profile.availability}
             </p>
 
@@ -57,9 +65,9 @@ export function Contact() {
                     rel={external ? "noopener noreferrer" : undefined}
                     aria-label={s.label}
                     title={s.label}
-                    className="grid h-10 w-10 place-items-center rounded-md border border-border bg-surface text-muted transition-colors hover:border-accent hover:text-accent"
+                    className="grid h-9 w-9 place-items-center rounded-[100px] border border-[#333333] text-[#3a4444] transition-colors hover:bg-[#151515] hover:text-white hover:border-[#151515]"
                   >
-                    <Icon className="h-[18px] w-[18px]" />
+                    <Icon className="h-[16px] w-[16px]" />
                   </a>
                 );
               })}
