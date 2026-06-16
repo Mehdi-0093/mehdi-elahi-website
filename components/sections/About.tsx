@@ -14,23 +14,23 @@ export function About() {
     <Section id="about" index="01" eyebrow="About" title="About">
       <Reveal>
         <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr] lg:gap-16">
-          <div className="space-y-5 text-[16px] leading-[1.6] text-[#3a4444]">
+          <div className="space-y-5 text-[16px] leading-[1.35] tracking-[-0.32px] text-[#4e4d4d]">
             {profile.summary.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
           </div>
 
-          <div className="h-fit rounded-lg border border-[#333333] bg-white p-6">
-            <p className="font-sans text-[12px] font-medium uppercase tracking-[0.08em] text-[#808080]">
+          <div className="h-fit rounded-[40px] bg-[#cfdaf5] p-10 shadow-[0_0_10px_0_rgba(0,0,0,0.1)]">
+            <p className="font-mono text-[12px] font-medium uppercase tracking-[-0.24px] text-[#4e4d4d]">
               • At a glance
             </p>
             <dl className="mt-5 space-y-4">
               {facts.map((f) => (
-                <div key={f.label} className="border-b border-[#e5e6e1] pb-3 last:border-0 last:pb-0">
-                  <dt className="text-[12px] font-medium uppercase tracking-[0.06em] text-[#808080]">
+                <div key={f.label} className="border-b border-[#000000]/15 pb-3 last:border-0 last:pb-0">
+                  <dt className="font-mono text-[11px] font-medium uppercase tracking-[-0.22px] text-[#4e4d4d]">
                     {f.label}
                   </dt>
-                  <dd className="mt-1 text-[14px] text-[#151515]">{f.value}</dd>
+                  <dd className="mt-1 text-[14px] tracking-[-0.28px] text-[#000000]">{f.value}</dd>
                 </div>
               ))}
             </dl>

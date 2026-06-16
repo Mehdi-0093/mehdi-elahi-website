@@ -1,18 +1,13 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  tone?: "default" | "accent";
-}
+type BadgeProps = React.HTMLAttributes<HTMLSpanElement>;
 
-export function Badge({ className, tone = "default", ...props }: BadgeProps) {
+export function Badge({ className, ...props }: BadgeProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-[100px] px-3 py-1 font-sans text-[13px] font-medium leading-none tracking-tight transition-colors",
-        tone === "accent"
-          ? "border border-[#453b60] text-[#453b60]"
-          : "border border-[#65451d] text-[#65451d]",
+        "inline-flex items-center rounded-[100px] border border-[#000000] px-3 py-1 font-mono text-[12px] font-medium leading-none tracking-tight text-[#000000] transition-colors",
         className
       )}
       {...props}

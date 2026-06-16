@@ -20,36 +20,36 @@ export function Contact() {
             <div className="space-y-3">
               <a
                 href={`mailto:${profile.email}`}
-                className="flex items-center gap-3 text-[#151515] transition-colors hover:text-[#65451d]"
+                className="flex cursor-pointer items-center gap-3 text-[#000000] transition-colors duration-200 hover:text-[#4e4d4d]"
               >
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[8px] border border-[#333333] text-[#65451d]">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[8px] border border-[#000000] text-[#000000]">
                   <Mail className="h-4.5 w-4.5" />
                 </span>
                 <span className="min-w-0">
-                  <span className="block text-[11px] font-medium uppercase tracking-[0.06em] text-[#808080]">
+                  <span className="block font-mono text-[11px] font-medium uppercase tracking-[-0.22px] text-[#797776]">
                     Email
                   </span>
-                  <span className="truncate text-[14px] text-[#151515]">
+                  <span className="truncate text-[14px] tracking-[-0.28px] text-[#000000]">
                     {profile.email}
                   </span>
                 </span>
               </a>
-              <div className="flex items-center gap-3 text-[#151515]">
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[8px] border border-[#333333] text-[#65451d]">
+              <div className="flex items-center gap-3 text-[#000000]">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[8px] border border-[#000000] text-[#000000]">
                   <MapPin className="h-4.5 w-4.5" />
                 </span>
                 <span>
-                  <span className="block text-[11px] font-medium uppercase tracking-[0.06em] text-[#808080]">
+                  <span className="block font-mono text-[11px] font-medium uppercase tracking-[-0.22px] text-[#797776]">
                     Location
                   </span>
-                  <span className="text-[14px] text-[#151515]">
+                  <span className="text-[14px] tracking-[-0.28px] text-[#000000]">
                     {profile.location}
                   </span>
                 </span>
               </div>
             </div>
 
-            <p className="text-[14px] leading-[1.6] text-[#3a4444]">
+            <p className="text-[14px] leading-[1.35] tracking-[-0.28px] text-[#4e4d4d]">
               {profile.availability}
             </p>
 
@@ -65,7 +65,7 @@ export function Contact() {
                     rel={external ? "noopener noreferrer" : undefined}
                     aria-label={s.label}
                     title={s.label}
-                    className="grid h-9 w-9 place-items-center rounded-[100px] border border-[#333333] text-[#3a4444] transition-colors hover:bg-[#151515] hover:text-white hover:border-[#151515]"
+                    className="grid h-9 w-9 cursor-pointer place-items-center rounded-[100px] border border-[#000000] text-[#4e4d4d] transition-colors duration-200 hover:bg-[#242424] hover:text-[#f6f3f1] hover:border-[#242424]"
                   >
                     <Icon className="h-[16px] w-[16px]" />
                   </a>

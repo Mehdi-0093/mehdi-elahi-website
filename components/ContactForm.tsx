@@ -47,7 +47,7 @@ export function ContactForm() {
     <form
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className="rounded-lg border border-[#333333] bg-white p-6 sm:p-7"
+      className="rounded-[40px] bg-[#cfdaf5] p-6 shadow-[0_0_10px_0_rgba(0,0,0,0.1)] sm:p-9"
     >
       <input
         ref={honeypot}
@@ -138,10 +138,10 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-1.5 flex items-center gap-2 text-sm font-medium text-ink">
+      <span className="mb-1.5 flex items-center gap-2 font-mono text-[12px] font-medium uppercase tracking-[-0.24px] text-[#000000]">
         {label}
         {optional ? (
-          <span className="text-xs font-normal text-subtle">(optional)</span>
+          <span className="font-sans text-xs font-normal normal-case text-[#797776]">(optional)</span>
         ) : null}
       </span>
       {children}

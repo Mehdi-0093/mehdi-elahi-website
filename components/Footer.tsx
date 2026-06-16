@@ -6,17 +6,17 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-[#e5e6e1] bg-white">
+    <footer className="border-t border-[#000000] bg-[#f6f3f1]">
       <div className="mx-auto w-full max-w-[1200px] px-6 py-14 sm:px-8">
         <div className="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
           <div className="max-w-sm">
-            <p className="font-sans text-[15px] font-medium tracking-[-0.03em] text-[#151515]">
-              {profile.name.toUpperCase()}
+            <p className="font-serif text-[18px] font-normal tracking-[-0.02em] text-[#000000]">
+              {profile.name}
             </p>
-            <p className="mt-2 text-[14px] leading-relaxed text-[#3a4444]">
+            <p className="mt-2 text-[14px] leading-relaxed tracking-[-0.28px] text-[#4e4d4d]">
               {profile.title} · {profile.subtitle}
             </p>
-            <p className="mt-1 text-[13px] text-[#808080]">{profile.location}</p>
+            <p className="mt-1 font-mono text-[12px] text-[#797776]">{profile.location}</p>
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -32,7 +32,7 @@ export function Footer() {
                       ? "noopener noreferrer"
                       : undefined
                   }
-                  className="grid h-9 w-9 place-items-center rounded-[100px] border border-[#333333] text-[#3a4444] transition-colors hover:bg-[#151515] hover:text-white hover:border-[#151515]"
+                  className="grid h-9 w-9 cursor-pointer place-items-center rounded-[100px] border border-[#000000] text-[#4e4d4d] transition-colors duration-200 hover:bg-[#242424] hover:text-[#f6f3f1] hover:border-[#242424]"
                   aria-label={social.label}
                   title={social.label}
                 >
@@ -43,13 +43,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-[#e5e6e1] pt-6 sm:flex-row sm:items-center">
-          <p className="text-[12px] text-[#808080]">
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-[#000000] pt-6 sm:flex-row sm:items-center">
+          <p className="font-mono text-[12px] text-[#797776]">
             © {year} {profile.name}. Built with Next.js &amp; Tailwind CSS.
           </p>
           <a
             href="#top"
-            className="inline-flex items-center gap-1.5 text-[12px] text-[#808080] transition-colors hover:text-[#151515]"
+            className="inline-flex cursor-pointer items-center gap-1.5 font-mono text-[12px] text-[#797776] transition-colors duration-200 hover:text-[#000000]"
           >
             Back to top
             <ArrowUp className="h-3.5 w-3.5" />

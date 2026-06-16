@@ -12,36 +12,30 @@ export function Events() {
       intro="Conferences and symposia I've presented at or attended."
     >
       <Reveal>
-        <ul className="overflow-hidden rounded-lg border border-[#333333] bg-white">
+        <ul className="overflow-hidden rounded-[40px] bg-[#cfdaf5] shadow-[0_0_10px_0_rgba(0,0,0,0.1)]">
           {events.map((event, i) => (
             <li
               key={event.name}
-              className={`flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between ${
-                i > 0 ? "border-t border-[#e5e6e1]" : ""
+              className={`flex flex-col gap-3 p-6 sm:flex-row sm:items-center sm:justify-between ${
+                i > 0 ? "border-t border-[#000000]/15" : ""
               }`}
             >
               <div className="min-w-0">
-                <p className="text-[#151515]">
-                  <span className="font-mono text-[13px] font-medium text-[#65451d]">
+                <p className="text-[#000000]">
+                  <span className="font-mono text-[13px] font-medium text-[#000000]">
                     {event.name}
                   </span>
-                  <span className="mx-2 text-[#808080]">—</span>
-                  <span className="text-[14px] text-[#3a4444]">{event.full}</span>
+                  <span className="mx-2 text-[#797776]">—</span>
+                  <span className="text-[14px] tracking-[-0.28px] text-[#4e4d4d]">{event.full}</span>
                 </p>
                 {event.location ? (
-                  <p className="mt-0.5 text-[13px] text-[#808080]">
+                  <p className="mt-0.5 font-mono text-[12px] text-[#797776]">
                     {event.location}
                   </p>
                 ) : null}
               </div>
               {event.role ? (
-                <span
-                  className={`self-start whitespace-nowrap rounded-[100px] border px-3 py-1 font-sans text-[12px] font-medium sm:self-auto ${
-                    event.role === "Attendee"
-                      ? "border-[#65451d] text-[#65451d]"
-                      : "border-[#453b60] text-[#453b60]"
-                  }`}
-                >
+                <span className="self-start whitespace-nowrap rounded-[100px] border border-[#000000] px-3 py-1 font-mono text-[12px] font-medium text-[#000000] sm:self-auto">
                   {event.role}
                 </span>
               ) : null}

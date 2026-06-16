@@ -3,13 +3,7 @@ import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { projects } from "@/data/projects";
 
-const cardColors = [
-  { bg: "#d3e5e9", label: "RESEARCH" },
-  { bg: "#bbb2ce", label: "BUILDING" },
-  { bg: "#cb9da2", label: "PUBLISHED" },
-  { bg: "#d3e5e9", label: "RESEARCH" },
-  { bg: "#bbb2ce", label: "BUILDING" },
-];
+const fallbackLabels = ["RESEARCH", "BUILDING", "PUBLISHED", "RESEARCH", "BUILDING"];
 
 export function Projects() {
   return (
@@ -22,27 +16,24 @@ export function Projects() {
     >
       <div className="grid gap-4 md:grid-cols-2">
         {projects.map((project, i) => {
-          const { bg, label } = cardColors[i % cardColors.length];
+          const label = fallbackLabels[i % fallbackLabels.length];
           return (
             <Reveal key={project.name} delay={(i % 2) * 80}>
-              <div
-                className="flex h-full flex-col rounded-lg border border-[#333333] p-6"
-                style={{ backgroundColor: bg }}
-              >
+              <div className="flex h-full flex-col rounded-[40px] bg-[#cfdaf5] p-8 shadow-[0_0_10px_0_rgba(0,0,0,0.1)]">
                 {/* Status label */}
-                <p className="font-sans text-[12px] font-medium uppercase tracking-[0.08em] text-[#3a4444]">
+                <p className="font-mono text-[12px] font-medium uppercase tracking-[-0.24px] text-[#4e4d4d]">
                   {project.status ? project.status.toUpperCase() : label}
                 </p>
 
-                <h3 className="mt-2 text-[22px] font-medium leading-[1.32] tracking-[-0.22px] text-[#151515]">
+                <h3 className="mt-2 font-serif text-[24px] font-normal leading-[1.2] tracking-[-0.48px] text-[#000000]">
                   {project.name}
                 </h3>
 
-                <p className="mt-1 text-[13px] font-medium text-[#453b60]">
+                <p className="mt-1 font-mono text-[12px] font-medium text-[#4e4d4d]">
                   {project.tagline}
                 </p>
 
-                <p className="mt-3 text-[14px] leading-[1.6] text-[#3a4444]">
+                <p className="mt-3 text-[14px] leading-[1.35] tracking-[-0.28px] text-[#4e4d4d]">
                   {project.description}
                 </p>
 
@@ -50,10 +41,10 @@ export function Projects() {
                   <div className="mt-5 flex gap-8">
                     {project.metrics.map((m) => (
                       <div key={m.label}>
-                        <div className="text-[22px] font-medium leading-none tracking-[-0.22px] text-[#151515]">
+                        <div className="font-mono text-[20px] font-medium leading-none tracking-[-0.4px] text-[#000000]">
                           {m.value}
                         </div>
-                        <div className="mt-1 text-[12px] text-[#808080]">
+                        <div className="mt-1 font-mono text-[11px] text-[#797776]">
                           {m.label}
                         </div>
                       </div>
@@ -66,7 +57,7 @@ export function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="inline-flex items-center rounded-[100px] border border-[#65451d] px-3 py-1 font-sans text-[12px] font-medium text-[#65451d]"
+                      className="inline-flex items-center rounded-[100px] border border-[#000000] px-3 py-1 font-mono text-[12px] font-medium text-[#000000]"
                     >
                       {tag}
                     </span>
@@ -75,7 +66,7 @@ export function Projects() {
 
                 {/* Footer */}
                 <div className="mt-auto flex items-center justify-between gap-3 pt-6">
-                  <span className="text-[12px] text-[#808080]">
+                  <span className="font-mono text-[11px] text-[#797776]">
                     {project.venue ? `${project.venue} · ` : ""}
                     {project.year}
                   </span>
@@ -84,7 +75,7 @@ export function Projects() {
                       href={project.link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-[100px] border border-[#333333] bg-white/60 px-3.5 py-1.5 text-[12px] font-medium text-[#151515] transition-colors hover:bg-white"
+                      className="inline-flex cursor-pointer items-center gap-1.5 rounded-[100px] border border-[#000000] bg-[#f6f3f1]/80 px-3.5 py-1.5 font-mono text-[12px] font-medium text-[#000000] transition-colors duration-200 hover:bg-[#f6f3f1]"
                     >
                       Paper
                       <ExternalLink className="h-3 w-3" />

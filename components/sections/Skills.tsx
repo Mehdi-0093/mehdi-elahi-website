@@ -17,12 +17,12 @@ export function Skills() {
           const Icon = skillIcons[group.icon];
           return (
             <Reveal key={group.name} delay={(i % 3) * 60}>
-              <div className="h-full rounded-lg border border-[#333333] bg-white p-6">
+              <div className="h-full rounded-[40px] bg-[#cfdaf5] p-8 shadow-[0_0_10px_0_rgba(0,0,0,0.1)]">
                 <div className="flex items-center gap-3">
-                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-[8px] border border-[#e5e6e1] text-[#65451d]">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-[8px] border border-[#000000] text-[#000000]">
                     <Icon className="h-4.5 w-4.5" />
                   </span>
-                  <h3 className="text-[15px] font-medium text-[#151515]">
+                  <h3 className="font-serif text-[18px] font-normal text-[#000000]">
                     {group.name}
                   </h3>
                 </div>
@@ -30,7 +30,7 @@ export function Skills() {
                   {group.items.map((item) => (
                     <span
                       key={item}
-                      className="inline-flex items-center rounded-[100px] border border-[#65451d] px-3 py-1 font-sans text-[12px] font-medium text-[#65451d]"
+                      className="inline-flex items-center rounded-[100px] border border-[#000000] px-3 py-1 font-mono text-[12px] font-medium text-[#000000]"
                     >
                       {item}
                     </span>
