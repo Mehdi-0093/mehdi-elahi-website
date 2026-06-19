@@ -6,6 +6,7 @@ import { site } from "@/data/site";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
+import { FloatingWidget } from "@/components/chat/FloatingWidget";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -88,6 +89,7 @@ export default function RootLayout({
         <Footer />
         <Analytics />
         <JsonLd />
+        <FloatingWidget />
       </body>
     </html>
   );
